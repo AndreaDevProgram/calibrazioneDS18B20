@@ -1,0 +1,61 @@
+html, body{
+    background-color: rgba(40, 40, 40, 1);
+}
+
+p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+}
+
+/*pc*/
+@media (min-width: 1200px){
+    .tablet-div{
+        background-color: rgba(40, 40, 40, 1);
+    }
+    .altezza-grafico-pc{
+        height: 600px;
+    }
+}
+
+/*tablet*/
+@media (orientation: portrait) and (min-width: 600px) and (max-width: 1200px){
+    .tablet-div{
+        background-color: rgba(40, 40, 40, 1);
+    }
+    .altezza-grafico-tablet{
+        height: 500px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 1000px) and (max-width: 1200px){
+    .tablet-div{
+        background-color: rgba(40, 40, 40, 1);
+    }
+    .altezza-grafico-tablet{
+        height: 500px;
+    }
+}
+
+/*mobile*/
+@media (orientation: portrait) and (min-width: 300px) and (max-width: 600px){
+    .tablet-div{
+        background-color: rgba(40, 40, 40, 1);
+    }
+    .altezza-grafico-mobile{
+        height: 250px;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 500px) and (max-width: 1000px){
+    .tablet-div{
+        background-color: rgba(40, 40, 40, 1);
+    }
+    .altezza-grafico-mobile{
+        height: 250px;
+    }
+}
+
+
+
+

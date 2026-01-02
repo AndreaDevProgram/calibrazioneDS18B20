@@ -22,8 +22,8 @@ function Grafico(props: GraficoProps){
 
     const chartRef = useRef<Chart>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const {m, setM} = useParametriFitLineare();
-    const {q, setQ} = useParametriFitLineare();
+    const {m} = useParametriFitLineare();
+    const {q} = useParametriFitLineare();
     const [punti, setPunti] = useState<{x: number, y: number}[]>([]);
 
 
@@ -241,8 +241,11 @@ async function AggiungiPunto(impostaPunti: React.Dispatch<React.SetStateAction<{
 
 async function AggiornaGrafico(impostaPunti: React.Dispatch<React.SetStateAction<{x:number, y:number}[]>>, elimina: boolean) {
     if(!elimina){
-        // Usiamo window.location.hostname invece di localhost per permettere l'accesso da altri dispositivi nella rete
-        let response = await fetch(`http://${window.location.hostname}:3000/temperatura`);
+        // In sviluppo (PC) usa la porta 3000, in produzione (ESP32) usa il percorso relativo
+        const url = import.meta.env.DEV 
+            ? `http://${window.location.hostname}:3000/temperatura` 
+            : '/temperatura';
+        let response = await fetch(url);
         if(response.ok){
             let textInput = document.getElementById('inputDatoLetto') as HTMLInputElement;
             if(textInput.value !== "" && textInput.value !== null){

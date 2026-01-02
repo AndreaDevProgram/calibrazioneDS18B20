@@ -30,6 +30,16 @@ createRoot(document.getElementById('root')!).render(
       >
       </Grafico>
     </ParametriProvider>
+        <ParametriProvider>
+      <Grafico
+      titolo='calibrazione sensore temperatura'
+      titoloAsseX='td [°C]'
+      titoloAsseY='tr [°C]'
+      colorePunti='rgba(72, 224, 255, 1)'
+      punto={{x:0, y:0}}
+      >
+      </Grafico>
+    </ParametriProvider>
     </FlexLayout>
   </StrictMode>,
 )

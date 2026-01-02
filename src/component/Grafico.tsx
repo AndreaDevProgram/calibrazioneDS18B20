@@ -31,7 +31,7 @@ function Grafico(props: GraficoProps){
         if(!canvasRef.current)return;
 
         let dataset: ChartDataset[] = [{
-            label:'',
+            label:'temperatura',
             type:'scatter',
             data: punti,
             pointBackgroundColor: props.colorePunti,
@@ -40,7 +40,7 @@ function Grafico(props: GraficoProps){
             showLine: false
         },
         {
-            label:'',
+            label:'Fit Lineare',
             type:'scatter',
             data:[
                 {x: -1000, y: Number(m) * -1000 + Number(q)},
@@ -101,6 +101,19 @@ function Grafico(props: GraficoProps){
                         display: true,
                         text: props.titolo,
                         color: 'white'
+                    },
+                    legend:{
+                        display: true,
+                        position:'right',
+                        align:'start',
+                        title:{
+                            display: false,
+                            text: 'Legenda',
+                            color: 'white'
+                        },
+                        labels:{
+                            color: 'white'
+                        }
                     }
                 }
             }
